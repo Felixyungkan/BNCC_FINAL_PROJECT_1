@@ -2,6 +2,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FakturController;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -22,5 +23,8 @@ Route::group(['middleware' => function ($request, $next) {
     Route::put('/barang/{id}', [BarangController::class, 'update'])->name('barangs.update');
     Route::delete('/barang/{id}', [BarangController::class, 'destroy'])->name('barangs.destroy');   
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/faktur/create', [FakturController::class, 'create'])->name('fakturs.create');
+    Route::post('/faktur', [FakturController::class, 'store'])->name('fakturs.store');
+
 });
 

@@ -44,6 +44,7 @@
                 </td>
                 
             </tr>
+            <a href="{{ route('fakturs.create') }}" class="btn btn-primary">Buat Faktur</a>
         @endforeach
     </table>
 </div>
